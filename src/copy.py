@@ -2,18 +2,7 @@ import os.path
 import shutil
 from os.path import isfile
 
-def clean_target_folder(target_path):
-    if os.path.exists(target_path):
-        folder_content = os.listdir(target_path)
-        for item in folder_content:
-            path = f"{target_path}{item}"
-            if isfile(path):
-                print(f"removing {path}")
-                os.remove(path)
-            else:
-                shutil.rmtree(path)
-    else:
-        raise Exception(f"Folder {target_path} not found")
+
 
 
 def copy_source_to_target(source_folder, target_folder):
